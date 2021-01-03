@@ -1,4 +1,4 @@
-# docker
+php访问mysql# docker
 ps：容器化只有一个操作系统，隔离不同的进程
 ps2：docker并不是容器，而是一个管理容器的引擎；
     运行机制：docker服务启动 -> 下载镜像 -> 启动该镜像得到一个容器 -> 容器里运行我们想要的程序
@@ -1350,24 +1350,25 @@ connect failed:SQLSTATE[HY000] [2054] The server requested authentication method
 原因：可能时mysql8采用了caching_sha2_password不同于mysql5的密码验证mysql_native_password方式，两种方案
 第一种：升级到支持mysql8验证方式的php
 第二种：将mysql8的验证方式改为mysql_native_password方式，这种方案有两种解决方法
-    a. 在mysql配置文件中设置密码验证方式为mysql_native_password
-    ```
-    [mysqld]
-    user=mysql
-    default-storage-engine=INNODB
-    character-set-server=utf8
-    default_authentication_plugin=mysql_native_password #这里
-    [client]
-    default-character-set=utf8
-    [mysql]
-    default-character-set=utf8
-    ```
-    b. 在配置文件中添加a中的`default_authentication_plugin=mysql_native_password`,
-    然后新添加用户，并授权
-    ```
-     CREATE USER 'newuser'@'%' IDENTIFIED BY '121212';
-     GRANT ALL PRIVILEGES ON *.* TO 'newuser'@'%';
-    ```
+    
+a. 在mysql配置文件中设置密码验证方式为mysql_native_password
+```
+[mysqld]
+user=mysql
+default-storage-engine=INNODB
+character-set-server=utf8
+default_authentication_plugin=mysql_native_password #这里
+[client]
+default-character-set=utf8
+[mysql]
+default-character-set=utf8
+```
+b. 在配置文件中添加a中的`default_authentication_plugin=mysql_native_password`,
+然后新添加用户，并授权
+```
+CREATE USER 'newuser'@'%' IDENTIFIED BY '121212';
+GRANT ALL PRIVILEGES ON *.* TO 'newuser'@'%';
+```
     
 CHANGE MASTER TO
 MASTER_HOST='132.232.70.99',
