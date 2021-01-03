@@ -4,14 +4,7 @@ ps2：docker并不是容器，而是一个管理容器的引擎；
     运行机制：docker服务启动 -> 下载镜像 -> 启动该镜像得到一个容器 -> 容器里运行我们想要的程序
 
 ## todo
-```shell script
-FROM nginx:latest
-RUN echo "This is my Nginx!!!"
-#WORKDIR /usr/sbin/
-COPY ./diy-test.txt /tmp/test/  #目录可以不存在
-ENTRYPOINT ["nginx", "-g", "daemon off;"]
 
-```
 
 ## 安装
 
