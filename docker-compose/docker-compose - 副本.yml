@@ -1,0 +1,60 @@
+version: '3'
+services:
+  web:
+    image: registry.cn-hangzhou.aliyuncs.com/neo1303582949/test:v0.2
+    ports:
+      - "8080:80"
+    container_name: "my_nginx"
+    volumes:
+      - 'C:\chao\sync2\backend\docker\docker-compose\services\nginx\www:/usr/share/nginx/html'
+      - 'C:\chao\sync2\backend\docker\docker-compose\services\nginx\conf.d:/etc/nginx/conf.d'
+    restart: always
+    links:
+      # 这样设置，nginx的配置文件中需要访问php-fpm所在的容器时，ip地址可以用php代替
+      - php:php
+    networks:
+      - dev
+    labels:
+      - "diy information in docker inspect"
+    depends_on:
+      - php
+  php:
+    #image: php:7.3.5-fpm
+    image: second_php_fpm:latest
+    ports:
+      - "9400:9000"
+    container_name: "my_php_fpm"
+    networks:
+      - dev
+      #- pro
+    volumes:
+      # 注意：放置php文件的目录映射要与nginx中的配置文件`fastcgi_param  SCRIPT_FILENAME  /usr/share/nginx/html/$fastcgi_script_name;`一致
+      - 'E:\chao\sync2\backend\docker\docker-compose\services\nginx\www:/usr/share/nginx/html'
+      #- 'E:\chao\sync2\backend\docker\docker-compose\services\php\ext:/usr/src/php/ext/'
+    links:
+          #这个设置是php容器中，php代码链接mysql的ip地址可以用mysql服务别名直接代替
+          - mysql:mysql
+  mysql:
+    image: mysql:latest
+    environment:
+      MYSQL_ROOT_PASSWORD: "L@123." #为数据库的密码，也就是root用户的密。
+      MYSQL_USER: 'test'
+      MYSQL_PASS: 'L@123.'
+      #MYSQL_DATABASE:'diy-database' #指定一个数据库，在容器启动时创建
+    restart: always
+    volumes:
+      - 'E:\chao\sync2\backend\docker\docker-compose\services\mysql\data:/var/lib/mysql'
+      # /etc/mysql是默认安装的配置文件目录，一般不要乱设置哦
+      - 'E:\chao\sync2\backend\docker\docker-compose\services\mysql\etc:/etc/mysql' #注意目录对应关系
+      - 'E:\chao\sync2\backend\docker\docker-compose\services\mysql\init:/docker-entrypoint-initdb.d/'
+    ports:
+      - "3306:3306"
+    container_name: "my_mysql"
+    networks:
+      - dev
+
+networks:
+  dev:
+    driver: bridge
+  pro:
+    driver: bridge
