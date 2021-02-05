@@ -3,3 +3,4 @@
 /docker-compose入门
 /Dockerfile
 /nginx-Dockerfile
+/docker-compose/services/nginx/www/*

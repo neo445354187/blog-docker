@@ -1,8 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0f49b7a3-a5fa-460a-803d-534e5233a22d" name="Default Changelist" comment="">
+    <list default="true" id="e43192e6-207c-4439-adb5-7b9f1fb9249a" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../../../../.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../../README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../mysql/data/ib_buffer_pool" beforeDir="false" afterPath="$PROJECT_DIR$/../../mysql/data/ib_buffer_pool" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../mysql/data/ib_logfile0" beforeDir="false" afterPath="$PROJECT_DIR$/../../mysql/data/ib_logfile0" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../mysql/data/ibdata1" beforeDir="false" afterPath="$PROJECT_DIR$/../../mysql/data/ibdata1" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/deployment.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/www.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../redis/data/dump.rdb" beforeDir="false" afterPath="$PROJECT_DIR$/../../redis/data/dump.rdb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,17 +30,8 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../../.." />
   </component>
-  <component name="PhpDebugGeneral" xdebug_debug_port="9999" listening_started="true" />
-  <component name="PhpServers">
-    <servers>
-      <server host="localhost" id="4623ba07-8eab-4562-860c-fb3c294f92cb" name="localhost" use_path_mappings="true">
-        <path_mappings>
-          <mapping local-root="$PROJECT_DIR$" remote-root="/usr/share/nginx/html" />
-        </path_mappings>
-      </server>
-    </servers>
-  </component>
-  <component name="ProjectId" id="1mQRAZqOKPkJlf19pM6qKgo2yYS" />
+  <component name="PhpDebugGeneral" xdebug_debug_port="9005" />
+  <component name="ProjectId" id="1mjFl3xQVCwt1CixTPPDviJ0wLR" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -35,104 +41,26 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="settings.php.debug.servers" />
+    <property name="settings.editor.selected.configurable" value="reference.settings.php.debug.xdebug.proxy" />
   </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="0f49b7a3-a5fa-460a-803d-534e5233a22d" name="Default Changelist" comment="" />
-      <created>1609423685706</created>
+      <changelist id="e43192e6-207c-4439-adb5-7b9f1fb9249a" name="Default Changelist" comment="" />
+      <created>1609999241810</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1609423685706</updated>
-      <workItem from="1609423689199" duration="84000" />
-      <workItem from="1609423799460" duration="87000" />
-      <workItem from="1609423894803" duration="29000" />
-      <workItem from="1609423948165" duration="550000" />
-      <workItem from="1609480470090" duration="999000" />
-      <workItem from="1609481699191" duration="9650000" />
-      <workItem from="1609570233723" duration="6904000" />
-      <workItem from="1609639874053" duration="1218000" />
+      <updated>1609999241810</updated>
+      <workItem from="1609999247927" duration="60000" />
     </task>
     <servers />
   </component>
-  <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="2" />
-  </component>
   <component name="WindowStateProjectService">
-    <state x="96" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1609424467376">
+    <state x="421" y="82" key="FileChooserDialogImpl" timestamp="1609999300786">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="96" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1280.680@0.0.1280.680" timestamp="1609424467376" />
-    <state width="1237" height="204" key="GridCell.Tab.0.bottom" timestamp="1609585724564">
-      <screen x="0" y="0" width="1280" height="680" />
-    </state>
-    <state width="1237" height="204" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1609585724564" />
-    <state width="1237" height="204" key="GridCell.Tab.0.center" timestamp="1609585724563">
-      <screen x="0" y="0" width="1280" height="680" />
-    </state>
-    <state width="1237" height="204" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1609585724563" />
-    <state width="1237" height="204" key="GridCell.Tab.0.left" timestamp="1609585724563">
-      <screen x="0" y="0" width="1280" height="680" />
-    </state>
-    <state width="1237" height="204" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1609585724563" />
-    <state width="1237" height="204" key="GridCell.Tab.0.right" timestamp="1609585724564">
-      <screen x="0" y="0" width="1280" height="680" />
-    </state>
-    <state width="1237" height="204" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1609585724564" />
-    <state width="1237" height="204" key="GridCell.Tab.1.bottom" timestamp="1609585724564">
-      <screen x="0" y="0" width="1280" height="680" />
-    </state>
-    <state width="1237" height="204" key="GridCell.Tab.1.bottom/0.0.1280.680@0.0.1280.680" timestamp="1609585724564" />
-    <state width="1237" height="204" key="GridCell.Tab.1.center" timestamp="1609585724564">
-      <screen x="0" y="0" width="1280" height="680" />
-    </state>
-    <state width="1237" height="204" key="GridCell.Tab.1.center/0.0.1280.680@0.0.1280.680" timestamp="1609585724564" />
-    <state width="1237" height="204" key="GridCell.Tab.1.left" timestamp="1609585724564">
-      <screen x="0" y="0" width="1280" height="680" />
-    </state>
-    <state width="1237" height="204" key="GridCell.Tab.1.left/0.0.1280.680@0.0.1280.680" timestamp="1609585724564" />
-    <state width="1237" height="204" key="GridCell.Tab.1.right" timestamp="1609585724564">
-      <screen x="0" y="0" width="1280" height="680" />
-    </state>
-    <state width="1237" height="204" key="GridCell.Tab.1.right/0.0.1280.680@0.0.1280.680" timestamp="1609585724564" />
-    <state width="1237" height="204" key="GridCell.Tab.2.bottom" timestamp="1609585724565">
-      <screen x="0" y="0" width="1280" height="680" />
-    </state>
-    <state width="1237" height="204" key="GridCell.Tab.2.bottom/0.0.1280.680@0.0.1280.680" timestamp="1609585724565" />
-    <state width="1237" height="204" key="GridCell.Tab.2.center" timestamp="1609585724564">
-      <screen x="0" y="0" width="1280" height="680" />
-    </state>
-    <state width="1237" height="204" key="GridCell.Tab.2.center/0.0.1280.680@0.0.1280.680" timestamp="1609585724564" />
-    <state width="1237" height="204" key="GridCell.Tab.2.left" timestamp="1609585724564">
-      <screen x="0" y="0" width="1280" height="680" />
-    </state>
-    <state width="1237" height="204" key="GridCell.Tab.2.left/0.0.1280.680@0.0.1280.680" timestamp="1609585724564" />
-    <state width="1237" height="204" key="GridCell.Tab.2.right" timestamp="1609585724564">
-      <screen x="0" y="0" width="1280" height="680" />
-    </state>
-    <state width="1237" height="204" key="GridCell.Tab.2.right/0.0.1280.680@0.0.1280.680" timestamp="1609585724564" />
-    <state x="142" y="0" key="SettingsEditor" timestamp="1609424464842">
-      <screen x="0" y="0" width="1280" height="680" />
-    </state>
-    <state x="142" y="0" key="SettingsEditor/0.0.1280.680@0.0.1280.680" timestamp="1609424464842" />
-    <state x="303" y="1" width="672" height="678" key="search.everywhere.popup" timestamp="1609424212176">
-      <screen x="0" y="0" width="1280" height="680" />
-    </state>
-    <state x="303" y="1" width="672" height="678" key="search.everywhere.popup/0.0.1280.680@0.0.1280.680" timestamp="1609424212176" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/test.php</url>
-          <line>3</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <state x="421" y="82" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1609999300786" />
   </component>
 </project>

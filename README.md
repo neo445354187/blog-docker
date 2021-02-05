@@ -1,7 +1,7 @@
 # docker
-ps：容器化只有一个操作系统，隔离不同的进程
-ps2：docker并不是容器，而是一个管理容器的引擎；
-    运行机制：docker服务启动 -> 下载镜像 -> 启动该镜像得到一个容器 -> 容器里运行我们想要的程序
+- ps： 容器化只有一个操作系统，隔离不同的进程
+- ps2：docker并不是容器，而是一个管理容器的引擎；
+       运行机制：docker服务启动 -> 下载镜像 -> 启动该镜像得到一个容器 -> 容器里运行我们想要的程序
 
 ## todo
 
@@ -975,17 +975,22 @@ docker-compose up -d
 ```
 
 #### 安装php扩展
+
 ##### 方式一
 ```shell script
 pecl install redis
 ```
-##### 方式二（采用）
+##### 方式二
 参考：<https://www.cnblogs.com/yinguohai/p/11329273.html>
 说明：docker-php-ext-source系列命令是docker的php容器自带的，自定义的php容器不一定有；
 参考：<https://hub.docker.com/_/php>
 
 备注：如果操作网速慢，可以更改镜像源
 `sed -i 's/dl-cdn.alpinelinux.org/mirrors.aliyun.com/g' /etc/apk/repositories`
+
+说明：**优先查看`/usr/src/php/ext`目录下，是否有相应的包，
+     如果有直接使用命令`docker-php-ext-install [package-name]`安装即可；**
+
 
 - 命令：`docker-php-source extract | delete`
     
@@ -1027,6 +1032,12 @@ xdebug.max_nesting_level=250
       然后 不需要 在浏览器中添加`XDEBUG_SESSION`的cookie了；直接打断点，浏览器访问地址即可；
       猜测原理：应该是访问服务器后，php的xdebug模块根据`xdebug.remote_host:xdebug.remote_port`触发phpstorm中
                断点起作用；
+配合phpstorm的断点使用：
+![](img/xdebug01.png)
+![](img/xdebug02.png)
+![](img/xdebug03.png)
+![](img/xdebug04.png)
+![](img/xdebug05.png)
 
 
 - 命令：`docker-php-ext-enable`

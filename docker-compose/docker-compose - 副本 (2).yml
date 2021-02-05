@@ -1,0 +1,90 @@
+version: '3'
+services:
+  web:
+    image: registry.cn-hangzhou.aliyuncs.com/neo1303582949/prod-nginx:v1.0
+    ports:
+      # 真假-对应着真实的物理机端口，以及容器内端口
+      - "80:80"
+    container_name: "my_nginx"
+    command: [nginx, '-g', 'daemon off;']
+    environment:
+      - NGINX_HOST=haha.com
+      # 猜测：这个端口可能是nginx监听端口
+      - NGINX_PORT=80
+    volumes:
+      # 真假-真实物理机目录，对应着容器内目录
+      - 'C:\chao\sync2\backend\docker\docker-compose\services\nginx\www:/usr/share/nginx/html'
+      - 'C:\chao\sync2\backend\docker\docker-compose\services\nginx\conf.d:/etc/nginx/conf.d'
+    #    restart: always
+    links:
+      # 这样设置，nginx的配置文件中需要访问php-fpm所在的容器时，ip地址可以用php代替
+      - php:php
+    networks:
+      dev:
+        # 用来固定ip
+        ipv4_address: 172.19.0.2
+    labels:
+      - "diy information in docker inspect"
+    depends_on:
+      - php
+  php:
+    image: registry.cn-hangzhou.aliyuncs.com/neo1303582949/prod-php:v0.6
+    ports:
+      - "9000:9000"
+    container_name: "my_php_fpm"
+    networks:
+      dev:
+        # 用来固定ip
+        ipv4_address: 172.19.0.3
+      #- pro
+    volumes:
+      # 注意：放置php文件的目录映射要与nginx中的配置文件`fastcgi_param  SCRIPT_FILENAME  /usr/share/nginx/html/$fastcgi_script_name;`一致
+      #      /usr/share/nginx/html是nginx容器中放置php文件的位置，即使现在在php容器中，依然用这个位置
+      - 'C:\chao\sync2\backend\docker\docker-compose\services\nginx\www:/usr/share/nginx/html'
+  mysql:
+    image: mysql:5.7.32
+    environment:
+      MYSQL_ROOT_PASSWORD: "L@123." #为数据库的密码，也就是root用户的密。
+      MYSQL_USER: 'test'
+      MYSQL_PASS: 'L@123.'
+      TZ: 'Asia/Shanghai'
+      #MYSQL_DATABASE:'diy-database' #指定一个数据库，在容器启动时创建
+    # restart: always
+    volumes:
+      # 只有mysql版本相同，映射的数据才能用
+      - 'C:\chao\sync2\backend\docker\docker-compose\services\mysql\data:/var/lib/mysql'
+      # /etc/mysql是默认安装的配置文件目录，一般不要乱设置哦
+      - 'C:\chao\sync2\backend\docker\docker-compose\services\mysql\etc:/etc/mysql' #注意目录对应关系
+      - 'C:\chao\sync2\backend\docker\docker-compose\services\mysql\init:/docker-entrypoint-initdb.d/'
+    ports:
+      - "3306:3306"
+    container_name: "my_mysql"
+    networks:
+      dev:
+        # 用来固定ip
+        ipv4_address: 172.19.0.4
+  redis:
+    image: redis:5.0.10-alpine
+    container_name: "my_redis"
+    ports:
+      # 端口映射
+      - 6379:6379
+    networks:
+      dev:
+        # 用来固定ip
+        ipv4_address: 172.19.0.5
+    volumes:
+      # 持久化 目录映射
+      - 'C:\chao\sync2\backend\docker\docker-compose\services\redis\conf:/usr/local/etc/redis'
+      - 'C:\chao\sync2\backend\docker\docker-compose\services\redis\data:/data'
+    command: ['redis-server', '/usr/local/etc/redis/redis.conf']
+networks:
+  dev:
+    # 引擎根据系统不同，通过命令`docker network ls`，查看系统具体支持哪一种网络，有bridge，nat等
+    driver: nat
+    ipam:
+      config:
+        - subnet: 172.19.0.0/16
+
+  #pro:
+  #  driver: nat
